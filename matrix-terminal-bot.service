@@ -1,0 +1,28 @@
+[Unit]
+Description=Matrix terminal bot
+After=network-online.target
+Requires=network-online.target
+# Remove if you don't run Synapse on this machine
+After=synapse.service
+Requires=synapse.service
+
+[Service]
+Environment=MATRIX_TOKEN=your-token
+# If you run your Matrix server on this machine:
+Environment=MATRIX_SERVER_URL=http://127.0.0.1:8008
+# If you use an external Matrix server:
+#Environment=MATRIX_SERVER_URL=https://matrix.org
+Environment=MATRIX_ROOM_ID=!xxxxx:your.domain
+# If you use this bot in a room bridged to a service like Discord with lower message length limits:
+#Environment=MAX_MESSAGE_LENGTH=1996
+Environment=PROGRAM=/usr/bin/edbrowse
+Type=exec
+User=matrix-terminal-bot
+Group=matrix-terminal-bot
+WorkingDirectory=/opt/matrix-terminal-bot
+ExecStart=/usr/bin/node out/matrix-terminal-bot.js
+Restart=on-failure
+RestartSec=30s
+
+[Install]
+WantedBy=multi-user.target
