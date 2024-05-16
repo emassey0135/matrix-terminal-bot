@@ -100,7 +100,7 @@
           matrix-server-url (.. js/process -env -MATRIX_SERVER_URL)
           matrix-room-id (.. js/process -env -MATRIX_ROOM_ID)
           program (.. js/process -env -PROGRAM)
-          max-message-length (.. js/process -env -MAX_MESSAGE_LENGTH)]
+          max-message-length (js/parseInt (.. js/process -env -MAX_MESSAGE_LENGTH))]
       (when-not matrix-token (throw "MATRIX_TOKEN environment variable not set"))
       (when-not matrix-server-url (throw "MATRIX_SERVER_URL environment variable not set"))
       (when-not matrix-room-id (throw "MATRIX_ROOM_ID environment variable not set"))
