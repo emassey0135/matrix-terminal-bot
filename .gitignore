@@ -1,0 +1,5 @@
+.m2
+.npm
+.shadow-cljs
+node_modules
+out
