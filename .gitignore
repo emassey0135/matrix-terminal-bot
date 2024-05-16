@@ -1,5 +1,6 @@
 .m2
 .npm
 .shadow-cljs
+data.json
 node_modules
 out
