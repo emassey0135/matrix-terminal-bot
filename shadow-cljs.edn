@@ -1,0 +1,10 @@
+{:source-paths
+["src"]
+:dependencies
+[]
+:builds
+{:bot
+{:target :node-script
+:main matrix-terminal-bot.core/main
+:output-to "out/matrix-terminal-bot.js"
+}}}
