@@ -24,7 +24,7 @@ To install the bot on Linux, first create a directory for it and copy the files 
 
 ```
 git clone https://github.com/emassey0135/matrix-terminal-bot
-sudo cp matrix-terminal-bot /opt/
+sudo cp -r matrix-terminal-bot /opt/
 ```
 
 Then create a user for it. There is a sysusers.d file in this repository, so you can simply run:
@@ -43,6 +43,7 @@ sudo chown -R matrix-terminal-bot:matrix-terminal-bot /opt/matrix-terminal-bot
 Install the NPM modules the bot uses. Make sure to do this as the bot user.
 
 ```
+cd /opt/matrix-terminal-bot
 sudo -u matrix-terminal-bot npm install
 ```
 
