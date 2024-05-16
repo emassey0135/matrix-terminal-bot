@@ -1,6 +1,6 @@
 # Matrix terminal bot
 
-This bot will start a program and send all of its output on standard output or standard error to a Matrix room, and pipe all messages from that Matrix room to its standard input. This lets you use many terminal programs directly from Matrrix, although programs that send ANSI escape sequences like Ncurses programs will not work very well yet. [Edbrowse](https://edbrowse.org) works very well under this bot, allowing you to browse the web, edit files, use email, and access IRC from a Matrix room.
+This bot will start a program and send all of its output on standard output or standard error to a Matrix room, and pipe all messages from that Matrix room to its standard input. This lets you use many terminal programs directly from Matrix, although programs that send ANSI escape sequences like Ncurses programs will not work very well yet. [Edbrowse](https://edbrowse.org) works very well under this bot, allowing you to browse the web, edit files, use email, and access IRC from a Matrix room.
 
 You can even run bash and access a full shell over Matrix, although the prompt will not be sent to the room. Other shell-like programs, such as REPLs like Python or Racket, or bc, dc, and text adventure games should also work.
 
@@ -14,13 +14,13 @@ After you have an account for the bot, follow [these directions](https://t2bot.i
 
 ### Joining a Room
 
-Either search for a room and join it from Element, orinvite the bot to a room from your main account and accept the invite. If you want to use this bot on another messenging service like Discord, you could also set up an account on that service and bridge to it using the bot's Matrix account. For Discord, it is recommended to create a bot account, and instructions for doing this with mautrix-discord can be found [here](https://docs.mau.fi/bridges/go/discord/authentication.html). After you login to the bridge with your third-party account, make sure it creates the room for the chat you want the bot to use.
+Either search for a room and join it from Element, or invite the bot to a room from your main account and accept the invite. If you want to use this bot on another messaging service like Discord, you could also set up an account on that service and bridge to it using the bot's Matrix account. For Discord, it is recommended to create a bot account, and instructions for doing this with mautrix-discord can be found [here](https://docs.mau.fi/bridges/go/discord/authentication.html). After you login to the bridge with your third-party account, make sure it creates the room for the chat you want the bot to use.
 
 Then open the room you have joined, and copy the string after and including the exclamation mark in your browser's address bar. This is the room ID of this room.
 
 ### Installing the Bot on Linux
 
-To install the bot on linux, first create a directory for it and copy the files from this repository there. For example, run:
+To install the bot on Linux, first create a directory for it and copy the files from this repository there. For example, run:
 
 ```
 git clone https://github.com/emassey0135/matrix-terminal-bot
@@ -91,7 +91,7 @@ This program takes its configuration from environment variables. These are the v
 |PROGRAM|The relative or absolute path to the program the bot will launch. You can also put a path to an executable script here.|
 |MAX_MESSAGE_LENGTH|The maximum message length the bot will send. This is useful for using the bot with services like Discord that have more limited message lengths than Matrix. If this variable is not set, the bot will use 64000.|
 
-## Behaviour and Other Considerations
+## Behavior and Other Considerations
 
 * The bot will send standard error to the room in the same way it sends standard output.
 * If the program exits, the bot will send a message with the exit code or signal that terminated the program, and then restart it.
